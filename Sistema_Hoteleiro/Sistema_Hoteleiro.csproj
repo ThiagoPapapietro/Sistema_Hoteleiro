@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A620D63D-6756-4972-B1A9-C7170B9E9317}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistema_Hoteleiro</RootNamespace>
+    <AssemblyName>Sistema_Hoteleiro</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>athenas.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AthenasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AthenasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AthenasDataSet1.cs">
+      <DependentUpon>AthenasDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AthenasDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AthenasDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Cargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Cargos.Designer.cs">
+      <DependentUpon>Cargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Fornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Fornecedores.Designer.cs">
+      <DependentUpon>Fornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Funcionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Funcionarios.Designer.cs">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Hospedes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Hospedes.Designer.cs">
+      <DependentUpon>Hospedes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\ListaFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\ListaFuncionarios.Designer.cs">
+      <DependentUpon>ListaFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Quartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Quartos.Designer.cs">
+      <DependentUpon>Quartos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Servicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Servicos.Designer.cs">
+      <DependentUpon>Servicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexao.cs" />
+    <Compile Include="Conexao1.cs" />
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\frm_Movimentacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\frm_Movimentacoes.Designer.cs">
+      <DependentUpon>frm_Movimentacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\frm_Vendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\frm_Vendas.Designer.cs">
+      <DependentUpon>frm_Vendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Gastos.Designer.cs">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Novo_Servicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Novo_Servicos.Designer.cs">
+      <DependentUpon>Novo_Servicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\Estoque.Designer.cs">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\EstoqueBaixo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\EstoqueBaixo.Designer.cs">
+      <DependentUpon>EstoqueBaixo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\Produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\Produtos.Designer.cs">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\frm_MovimentacoesGerais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_MovimentacoesGerais.Designer.cs">
+      <DependentUpon>frm_MovimentacoesGerais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelComprovante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelComprovante.Designer.cs">
+      <DependentUpon>frm_RelComprovante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelDetReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelDetReservas.Designer.cs">
+      <DependentUpon>frm_RelDetReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelMovimentacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelMovimentacoes.Designer.cs">
+      <DependentUpon>frm_RelMovimentacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelProdutos.Designer.cs">
+      <DependentUpon>frm_RelProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelServicos.Designer.cs">
+      <DependentUpon>frm_RelServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelVendas.Designer.cs">
+      <DependentUpon>frm_RelVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelComprovanteServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frm_RelComprovanteServico.Designer.cs">
+      <DependentUpon>frm_RelComprovanteServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas\CheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\CheckIn.Designer.cs">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas\CheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\CheckOut.Designer.cs">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas\ConsultarReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\ConsultarReservas.Designer.cs">
+      <DependentUpon>ConsultarReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas\frm_Reservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservas\frm_Reservas.Designer.cs">
+      <DependentUpon>frm_Reservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Cadastros\Cargos.resx">
+      <DependentUpon>Cargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Fornecedores.resx">
+      <DependentUpon>Fornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Funcionarios.resx">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Hospedes.resx">
+      <DependentUpon>Hospedes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\ListaFuncionarios.resx">
+      <DependentUpon>ListaFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Quartos.resx">
+      <DependentUpon>Quartos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Servicos.resx">
+      <DependentUpon>Servicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\frm_Movimentacoes.resx">
+      <DependentUpon>frm_Movimentacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\frm_Vendas.resx">
+      <DependentUpon>frm_Vendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Gastos.resx">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Novo_Servicos.resx">
+      <DependentUpon>Novo_Servicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\Estoque.resx">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\EstoqueBaixo.resx">
+      <DependentUpon>EstoqueBaixo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\Produtos.resx">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Relatorios\frm_MovimentacoesGerais.resx">
+      <DependentUpon>frm_MovimentacoesGerais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frm_RelComprovante.resx">
+      <DependentUpon>frm_RelComprovante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frm_RelDetReservas.resx">
+      <DependentUpon>frm_RelDetReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frm_RelMovimentacoes.resx">
+      <DependentUpon>frm_RelMovimentacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frm_RelProdutos.resx">
+      <DependentUpon>frm_RelProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frm_RelServicos.resx">
+      <DependentUpon>frm_RelServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frm_RelVendas.resx">
+      <DependentUpon>frm_RelVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelComprovante.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelComprovanteServico.rdlc" />
+    <EmbeddedResource Include="Relatorios\frm_RelComprovanteServico.resx">
+      <DependentUpon>frm_RelComprovanteServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelDetReservas.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelMovimentacoes.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelMovimentacoesGerais.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelProdutos.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelServicos.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelVendas.rdlc" />
+    <EmbeddedResource Include="Reservas\CheckIn.resx">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas\CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas\ConsultarReservas.resx">
+      <DependentUpon>ConsultarReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservas\frm_Reservas.resx">
+      <DependentUpon>frm_Reservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AthenasDataSet.xsc">
+      <DependentUpon>AthenasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AthenasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AthenasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AthenasDataSet.xss">
+      <DependentUpon>AthenasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AthenasDataSet1.xsc">
+      <DependentUpon>AthenasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="AthenasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AthenasDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AthenasDataSet1.xss">
+      <DependentUpon>AthenasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="athenas.ico" />
+    <Content Include="iconfinder_16_2300992.ico" />
+    <None Include="Resources\sem-foto.jpg" />
+    <None Include="Resources\baixo.png" />
+    <None Include="Resources\bom.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
